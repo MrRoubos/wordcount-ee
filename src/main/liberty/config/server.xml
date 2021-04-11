@@ -1,0 +1,22 @@
+<server description="new server">
+
+    <featureManager>
+        <feature>jaxrs-2.1</feature>
+        <feature>jsonp-1.1</feature>
+        <feature>cdi-2.0</feature>
+        <feature>mpConfig-1.4</feature>
+
+        <!--Enable the following features to run tests with Arquillian managed container-->
+        <feature>localConnector-1.0</feature>
+        <feature>servlet-4.0</feature>
+
+    </featureManager>
+
+    <variable name="default.http.port" defaultValue="9080" />
+    <variable name="default.https.port" defaultValue="9443" />
+
+    <httpEndpoint id="defaultHttpEndpoint" httpPort="${default.http.port}"
+        httpsPort="${default.https.port}" />
+    <webApplication location="guide-arquillian-managed.war"
+        context-root="/" />
+</server>
